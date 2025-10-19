@@ -43,7 +43,7 @@ Generally, such NNPs are trained on single point energies. Thus, their use in MD
 
 Therefore, my goal is to propose a NNP architecture that achieves an acceptable trade-off between accuracy and computational effort by using and fine-tuning well-established and tested methods to predict potential energy surfaces. 
 
-Since some ideas and key features need to be used in any NNP architecture (e.g. the use of a neighborlist.) If the use of a complex tool such as the construction of a neighbor list will be required in my neural network architecture, I will try to use existing implementations (for pytorch-based models, this could be for example the neighbor list implementation of [NNPOps](https://github.com/openmm/NNPOps)).
+Some ideas and key features need to be used in any NNP architecture, such as a neighborlist or a differentiable cutoff function. Therefore, whenever possible, I will try to use existing implementations (for pytorch-based models, this could be for example the neighbor list implementation of [NNPOps](https://github.com/openmm/NNPOps)).
 
 ---
 
