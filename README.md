@@ -44,10 +44,8 @@ For each atom i:
 After N message-passing layers:  
     6. Sum over all nodes to predict molecular energy  
 
----
-
-## Building blocks
-### Components
+### Building blocks
+#### Components
 | **Component**              | **What it does**                                                                                       | **Why it’s important**                               |
 |-----------------------------|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
 | **Node features**           | Atom type embeddings, maybe charges, hybridization                                                    | Basis for all calculations                            |
@@ -57,7 +55,7 @@ After N message-passing layers:
 | **Update function**         | Updates node features                                                                                 | Allows information to propagate                       |
 | **Readout / pooling**       | Converts node embeddings to molecular energy                                                          | Can be sum, mean, or learned aggregation              |
 
-### Explanation
+#### Explanation
 
 | **Component** | **Explanation** |
 |----------------|-----------------|
