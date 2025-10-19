@@ -38,6 +38,8 @@ Given that molecules can be modeled as graphs where atoms are considered as node
 
 Generally, such NNPs are trained on single point energies. Thus, their use in MD simulations is definitely an application outside of their training domain, making the task even more difficult. Also, given that MD simulations are computationally highly expensive, the question of how complex a NNP’s architecture can and should be is crucial. Also, given that the use of NNPs in computational chemistry is still quite new, many methods that are already existing in classical MD simulations (using empirical FFs), need to be re-developed for the use of NNPs. For the development of such methods, the overall accuracy is not always the key point. Often, a functional yet not fully accurate NNP would be sufficient to test new methods.
 
+Therefore, my goal is to find a possible NNP architecture that imposes an acceptable trade-off between accuracy and computational effort by using and fine-tuning well-established and tested methods to predict potential energy surfaces. 
+
 Since some ideas and key features need to be used in any NNP architecture (e.g. the use of a neighborlist.) If the use of a complex tool such as the construction of a neighbor list will be required in my neural network architecture, I will try to use existing implementations (for pytorch-based models, this could be for example the neighbor list implementation of [NNPOps](https://github.com/openmm/NNPOps)).
 
 
