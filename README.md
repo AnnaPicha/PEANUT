@@ -13,7 +13,7 @@
 
 ## Table of Contents
 - [Project description](#Project-description)
-  - [Suggestes workplan](#suggested-workplan)
+  - [Suggested workplan](#suggested-workplan)
 - [Model / Architecture](#model--architecture)
   - [Building blocks](#building-blocks)
   - [Explanation](#explanation)
