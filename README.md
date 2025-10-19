@@ -102,7 +102,7 @@ Note: In step 1.1., I will have to use the previously mentioned neighbor list an
 [Radial features r_ij]  <-- rotational & translational invariance
        |
        v
-[Directional features θ_ijk]  <-- rotational invariance
+[Directional features Y_ij]  <-- rotational invariance
        |
        v
 [Message passing / attention]  <-- permutational invariance
