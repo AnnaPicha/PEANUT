@@ -87,7 +87,7 @@ This neural network architecture will be built using pytorch.
 - Python >= 3.8
 - pytorch, ...
 
-### Quick start (example)
+### Quick start
 This is just a place-holder. There is nothing to install yet.
 
 ```bash
