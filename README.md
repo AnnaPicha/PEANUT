@@ -17,6 +17,7 @@
 - [Model / Architecture](#model--architecture)
   - [Building blocks](#building-blocks)
   - [Tool box](#tool-box)
+  - [Challenges](#challenges)
 - [Dataset](#dataset)
 - [Installation](#installation)
   - [Requirements](#requirements)
@@ -99,6 +100,10 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 | **Attention** `\alpha_{ij}` | Simple sigmoid attention on messages.<br>Could be replaced by softmax per node if desired. |
 | **Node update** | Sums (weighted) messages (`m^{'}_{ij} = \alpha_{ij}\cdot m_{ij}`) from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
 | **Multi-scale** (Optional) | Optional use of 2-3different edge MLP to allows different treatments of neighboring atoms based on distance. Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
+
+### Challenges
+
+I am not sure if the use of attention layers and / or multi-scale edge MLPs is very costly. Also, I am not sure what the profit is. I do want to try using both of them to give neir neighbors a higher influence on the central atoms. But if this does not help a lot or is too costly, I might remove these parts.
 
 #### Sketch for attention layer part
 ```bash
