@@ -12,7 +12,7 @@
 ---
 
 ## Table of Contents
-- [Project description](#Project--description)
+- [Project description](#Project-description)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
