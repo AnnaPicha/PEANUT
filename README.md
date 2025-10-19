@@ -83,12 +83,12 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 #### Components
 | **Component**              | **Explanation**                               |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Node features**           | Atom type embeddings, maybe charges, hybridization                                                    | Basis for all calculations                            |
-| **Edge features**           | Interatomic distances, optionally radial basis expansion                                              | Encodes pairwise geometry                             |
-| **Triplet / angle features**| Angle between bonds for atom triplets                                                                 | Captures directional dependencies                     |
-| **Message passing / convolution** | Aggregates neighbor info, possibly with learned weights depending on distance/angle             | Where the network learns chemical interactions        |
-| **Update function**         | Updates node features                                                                                 | Allows information to propagate                       |
-| **Readout / pooling**       | Converts node embeddings to molecular energy                                                          | Can be sum, mean, or learned aggregation              |
+| **Node features**           | Learned atom type embeddings, basis for all calculations                            |
+| **Edge features**           | Interatomic distances, optionally radial basis expansion -> Encodes pairwise geometry                             |
+| **Triplet / angle features**| Angle between bonds for atom triplets to capture directional dependencies                     |
+| **Message passing / convolution** | Aggregates neighbor information, possibly with learned weights depending on distance/angle (attention layer) -> the network learns chemical interactions        |
+| **Update function**         | Updates node features  to allow information to propagate                       |
+| **Readout / pooling**       | Converts node embeddings to molecular energy. Can be sum, mean, or learned aggregation              |
 
 ### Explanation
 
