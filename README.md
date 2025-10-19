@@ -134,8 +134,7 @@ Some succesful architectures, such as [MACE](https://doi.org/10.48550/arXiv.2206
 | **Component**              | **Explanation**                               |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Node features**           | Learned atom type embeddings `h_i`, basis for all calculations                            |
-| **Edge features**           | Interatomic distances `r_ij`, optionally radial basis expansion -> Encodes pairwise geometry                             |
-| **Triplet / angle features**| Angle between bonds for atom triplets to capture directional dependencies. `v_{ijk}`                     |
+| **Edge features**           | Messages `m_ij`, are constructed with learned node features |
 | **Message passing / graph NN** | Aggregates neighbor information, possibly with learned weights depending on distance/angle (attention layer) -> the network learns chemical interactions        |
 | **Update function**         | Updates node features  to allow information to propagate                       |
 | **Readout / pooling**       | Converts node embeddings to molecular energy. Can be sum, mean, or learned aggregation              |
@@ -145,8 +144,8 @@ Some succesful architectures, such as [MACE](https://doi.org/10.48550/arXiv.2206
 | **Component** | **Explanation** |
 |----------------|-----------------|
 | **Radial basis** `b_{ij}`| *RadialBasis* is learnable, taking distances `r_ij` and mapping them to a higher-dimensional embedding. `b_{ij} = MLP(h_i, h_j, \phi(r_ij))`, `\phi` will be some initial descriptor.|
-| **Angular basis** `v_{ijk}`| *FixedAngularBasis* e.g. Spherical harmonics or angular Behler-Parinello symmetry functions. No MLP! The per-edge angular descriptor is obtained by summing over all triplets involving that edge (`v_{ij} = Σ_k v_{ijk}`), which provides an averaged directional context at reduced computational cost.|
-| **Edge MLP** | Concatenates sender node (initially these are the embedding vectors), receiver node, and radial + angular features.<br>Outputs a learned message embedding for each edge. `m_{ij} = MLP(h_i, h_j, b_{ij}, v_{ij})`|
+| **Directional basis** `Y_{ij}`| *DirectionalBasis* e.g. Vector-based Spherical harmonics of rank `l` (`Y_{ij} = Y_l(r_{ij})`|
+| **Edge MLP** | Concatenates sender node (initially these are the embedding vectors), receiver node, and radial + angular features.<br>Outputs a learned message embedding for each edge. `m_{ij} = MLP(h_i, h_j, b_{ij}, Y_{ij})`|
 | **Attention** `\alpha_{ij}` | Simple sigmoid attention on messages.<br>Could be replaced by softmax per node if desired. |
 | **Node update** | Sums (weighted) messages (`m^{'}_{ij} = \alpha_{ij}\cdot m_{ij}`) from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
 | **Multi-scale** (Optional) | Optional use of 2-3 different edge MLPs to allows different treatments of neighboring atoms based on distance. Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
