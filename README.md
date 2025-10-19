@@ -55,7 +55,7 @@ After N message-passing layers:
 | **Update function**         | Updates node features                                                                                 | Allows information to propagate                       |
 | **Readout / pooling**       | Converts node embeddings to molecular energy                                                          | Can be sum, mean, or learned aggregation              |
 
-#### Explanation
+### Explanation
 
 | **Component** | **Explanation** |
 |----------------|-----------------|
