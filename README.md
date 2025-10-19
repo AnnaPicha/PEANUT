@@ -16,7 +16,7 @@
   - [Suggested workplan](#suggested-workplan)
 - [Model / Architecture](#model--architecture)
   - [Building blocks](#building-blocks)
-  - [Explanation](#explanation)
+  - [Tool box](#tool-box)
 - [Dataset](#dataset)
 - [Installation](#installation)
   - [Requirements](#requirements)
@@ -90,7 +90,7 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 | **Update function**         | Updates node features  to allow information to propagate                       |
 | **Readout / pooling**       | Converts node embeddings to molecular energy. Can be sum, mean, or learned aggregation              |
 
-### Explanation
+### Tool box
 
 | **Component** | **Explanation** |
 |----------------|-----------------|
