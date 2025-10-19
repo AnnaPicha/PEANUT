@@ -81,7 +81,7 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 
 ---
 
-### Building blocks
+### Building blocks for representation learning
 | **Component**              | **Explanation**                               |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Node features**           | Learned atom type embeddings `h_i`, basis for all calculations                            |
@@ -100,7 +100,8 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 | **Edge MLP** | Concatenates sender node (initially these are the embedding vectors), receiver node, and radial + angular features.<br>Outputs a learned message embedding for each edge. `m_{ij} = MLP(h_i, h_j, b_{ij}, v_{ij})`|
 | **Attention** `\alpha_{ij}` | Simple sigmoid attention on messages.<br>Could be replaced by softmax per node if desired. |
 | **Node update** | Sums (weighted) messages (`m^{'}_{ij} = \alpha_{ij}\cdot m_{ij}`) from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
-| **Multi-scale** (Optional) | Optional use of 2-3different edge MLP to allows different treatments of neighboring atoms based on distance. Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
+| **Multi-scale** (Optional) | Optional use of 2-3 different edge MLPs to allows different treatments of neighboring atoms based on distance. Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
+
 
 ### Challenges
 
