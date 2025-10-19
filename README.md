@@ -102,7 +102,7 @@ Even though the ultimative goal would be running MD simulations with this model,
 
 ## Dataset
 
-I plan to use already existing datasets for the training of my neural network. The main effort will go into the cunstruction / design, development and implementation of the neural network architecture and the corresponding training. I have not decided yet which dataset I will use. However, there are multiple datasets available that fit my proposed goal (e.g. the [ANI-2x](https://zenodo.org/records/10108942) or the [SPICE](https://www.nature.com/articles/s41597-022-01882-6) dataset). Apart from those two, that have already been used for the training of e.g. the [ANI-2x](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.0c00121) or the [MACE-OFF](https://doi.org/10.1021/jacs.4c07099) model, there are also some other databases that provide suitibable datasets such as [PubChem](https://pubchem.ncbi.nlm.nih.gov/).
+I plan to use already existing datasets for the training of my neural network. The main effort will go into the cunstruction / design, development and implementation of the neural network architecture and the corresponding training. I have not decided yet which dataset I will use. However, there are multiple datasets available that fit my proposed goal (e.g. the [ANI-2x](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.0c00121) or the [SPICE](https://www.nature.com/articles/s41597-022-01882-6) dataset). Apart from those two, that have already been used for the training of e.g. the [ANI-2x](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.0c00121) or the [MACE-OFF](https://doi.org/10.1021/jacs.4c07099) model, there are also some other databases that provide suitibable datasets such as [PubChem](https://pubchem.ncbi.nlm.nih.gov/).
 
 ---
 
@@ -124,10 +124,11 @@ cd PEANUT
 
 # create venv (optional)
 conda create -n peanut
-conda acticte peanut 
+conda activate peanut 
 
 # install
 pip install -r requirements.txt
+mamba install -c conda-forge pytorch nnpops
 ```
 ---
 
@@ -142,6 +143,10 @@ Model architectures:
 [5] doi.org/10.1039/C6SC05720A  
 
 Datasets:  
+[ANI-2x](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.0c00121)
+[SPICE](https://www.nature.com/articles/s41597-022-01882-6)  
+[PubChem](https://pubchem.ncbi.nlm.nih.gov/)
+
 
 ---
 
