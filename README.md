@@ -100,6 +100,17 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 | **Node update** | Sums (weighted) messages (`m^{'}_{ij} = \alpha_{ij}\cdot m_{ij}`) from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
 | **Multi-scale** | Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
 
+#### Sketch for attention layer part
+´´´bash
+Node i neighbors: j1, j2, j3
+
+Edge MLP: compute m_ij1, m_ij2, m_ij3  <-- message passing
+Attention: compute α_ij1, α_ij2, α_ij3  <-- per message
+Weighted messages: α_ij * m_ij
+Aggregate: sum/mean → updated node embedding h_i
+
+```
+
 ### Model evaluation
 
 Even though the ultimative goal would be running MD simulations with this model, this is quite challenging. Apart from a fully trained model, a use in MD simulations would also require a full integration into an existing MD engine. And of course also several MD simulations, which take a lot of time to run. Therefore, for this lecture, I plan to test my model on single point conformations predicting single point energies only. If the model looks promising, I might reconsider and try to integrate it into an MD engine. However, this would clearly be to much for the goal of this lecture. So this parts remains optional, depending of this project's outcome.
