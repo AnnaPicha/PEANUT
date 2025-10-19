@@ -207,19 +207,38 @@ mamba install -c conda-forge pytorch nnpops
 
 ## References
 
-Model architectures:  
+### Model Architectures
 
-[1] Directional Message Passing for Molecular Graphs, Johannes Gasteiger and Janek Groß and Stephan Günnemann, 2022, https://doi.org/10.48550/arXiv.2003.03123 
-[2] MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields, Ilyes Batatia and Dávid Péter Kovács and Gregor N. C. Simm and Christoph Ortner and Gábor Csányi, 2023,   
-https://doi.org/10.48550/arXiv.2206.07697
-[3] MACE-OFF: Short-Range Transferable Machine Learning Force Fields for Organic Molecules, Dávid Péter Kovács, J. Harry Moore, Nicholas J. Browning, Ilyes Batatia, Joshua T. Horton, Yixuan Pu, Venkat Kapil, William C. Witt, Ioan-Bogdan Magdău, Daniel J. Cole, and Gábor Csányi, 2025, doi.org/10.1021/jacs.4c07099  
-[4] SchNet: A continuous-filter convolutional neural network for modeling quantum interactions, Kristof T. Schütt and Pieter-Jan Kindermans and Huziel E. Sauceda and Stefan Chmiela and Alexandre Tkatchenko and Klaus-Robert Müller, 2017, https://arxiv.org/abs/1706.08566  
-[5] ANI-1: an extensible neural network potential with DFT accuracy at force field computational cost,  J. S. Smith, O. Isayev and  A. E. Roitberg, 2017, doi.org/10.1039/C6SC05720A  
+1. **[Directional Message Passing for Molecular Graphs](https://doi.org/10.48550/arXiv.2003.03123)**  
+   Johannes Gasteiger, Janek Groß, Stephan Günnemann, 2022. *arXiv:2003.03123*
 
-Datasets:  
-[ANI-2x](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.0c00121) Extending the Applicability of the ANI Deep Learning Molecular Potential to Sulfur and Halogens, Christian DevereuxJustin S. Smith*Kate K. HuddlestonKipton BarrosRoman ZubatyukOlexandr Isayev*Adrian E. Roitberg, 2020, doi.org/10.1021/acs.jctc.0c00121  
-[SPICE](https://www.nature.com/articles/s41597-022-01882-6) SPICE, A Dataset of Drug-like Molecules and Peptides for Training Machine Learning Potentials, Eastman, P., Behara, P.K., Dotson, D.L. et al. SPICE, A Dataset of Drug-like Molecules and Peptides for Training Machine Learning Potentials, 2023, doi.org/10.1038/s41597-022-01882-6  
-[PubChem](https://pubchem.ncbi.nlm.nih.gov/)
+2. **[MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields](https://doi.org/10.48550/arXiv.2206.07697)**  
+   Ilyes Batatia, Dávid Péter Kovács, Gregor N. C. Simm, Christoph Ortner, Gábor Csányi, 2023. *arXiv:2206.07697*
+
+3. **[MACE-OFF: Short-Range Transferable Machine Learning Force Fields for Organic Molecules](https://doi.org/10.1021/jacs.4c07099)**  
+   Dávid Péter Kovács, J. Harry Moore, Nicholas J. Browning, Ilyes Batatia, Joshua T. Horton, Yixuan Pu, Venkat Kapil, William C. Witt, Ioan-Bogdan Magdău, Daniel J. Cole, Gábor Csányi, 2025. *DOI: 10.1021/jacs.4c07099*
+
+4. **[SchNet: A Continuous-Filter Convolutional Neural Network for Modeling Quantum Interactions](https://arxiv.org/abs/1706.08566)**  
+   Kristof T. Schütt, Pieter-Jan Kindermans, Huziel E. Sauceda, Stefan Chmiela, Alexandre Tkatchenko, Klaus-Robert Müller, 2017. *arXiv:1706.08566*
+
+5. **[ANI-1: An Extensible Neural Network Potential with DFT Accuracy at Force Field Computational Cost](https://doi.org/10.1039/C6SC05720A)**  
+   J. S. Smith, O. Isayev, A. E. Roitberg, 2017. *DOI: 10.1039/C6SC05720A*
+
+---
+
+### Datasets
+
+1. **[ANI-2x](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.0c00121)**  
+   Extending the Applicability of the ANI Deep Learning Molecular Potential to Sulfur and Halogens  
+   Christian Devereux, Justin S. Smith, Kate K. Huddleston, Kipton Barros, Roman Zubatyuk, Olexandr Isayev, Adrian E. Roitberg, 2020. *DOI: 10.1021/acs.jctc.0c00121*
+
+2. **[SPICE](https://www.nature.com/articles/s41597-022-01882-6)**  
+   A Dataset of Drug-like Molecules and Peptides for Training Machine Learning Potentials  
+   Eastman, P., Behara, P. K., Dotson, D. L., et al., 2023. *DOI: 10.1038/s41597-022-01882-6*
+
+3. **[PubChem](https://pubchem.ncbi.nlm.nih.gov/)**  
+   Open Chemistry Database, National Institutes of Health.
+
 
 
 ---
