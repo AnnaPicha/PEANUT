@@ -217,8 +217,8 @@ https://doi.org/10.48550/arXiv.2206.07697
 [5] ANI-1: an extensible neural network potential with DFT accuracy at force field computational cost,  J. S. Smith, O. Isayev and  A. E. Roitberg, 2017, doi.org/10.1039/C6SC05720A  
 
 Datasets:  
-[ANI-2x](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.0c00121)
-[SPICE](https://www.nature.com/articles/s41597-022-01882-6)  
+[ANI-2x](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.0c00121) Extending the Applicability of the ANI Deep Learning Molecular Potential to Sulfur and Halogens, Christian DevereuxJustin S. Smith*Kate K. HuddlestonKipton BarrosRoman ZubatyukOlexandr Isayev*Adrian E. Roitberg, 2020, doi.org/10.1021/acs.jctc.0c00121  
+[SPICE](https://www.nature.com/articles/s41597-022-01882-6) SPICE, A Dataset of Drug-like Molecules and Peptides for Training Machine Learning Potentials, Eastman, P., Behara, P.K., Dotson, D.L. et al. SPICE, A Dataset of Drug-like Molecules and Peptides for Training Machine Learning Potentials, 2023, doi.org/10.1038/s41597-022-01882-6  
 [PubChem](https://pubchem.ncbi.nlm.nih.gov/)
 
 
