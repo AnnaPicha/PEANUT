@@ -112,6 +112,10 @@ If a model is applied to the above described setting, we have to ensure that sev
 - Translational invariance: using relative positions only ensures this  
 - Permutational invariance: sum or mean over neighbor messages ensures exchangeability  
 
+## Representation learning
+The goal of the model is to predict atom-wise energy contributions to a chemical system (e.g. one single moecule). That is, the model needs to learn a suitable representation for each atom in the system. This is usually devided in two key parts: Radial and angular features. Radial features are based on pairwise distances where the neighbor list comes into play. Angular features are constructed using triplets, e.g. a triplet neighbor list is required as well. For both types of features, we can use some fixed descriptors such as symmetry functions, spherical harmonics, Besser functions etc., that are then passed through a learnable MLP (= represenation learning). In order to reduce computational cost, I want to simplify the representation learning part as follows:  
+
+ The model will use learned radial features, but fixed angular features. The triplet neighbor list still has to be computed once, but the network does not have to have to apply any additional learning for angular feature extraction. This will surely reduce the network's potential accuracy, but also hopefully reduce computation times.
 
 ---
 
