@@ -14,7 +14,8 @@
 ## Table of Contents
 - [Project description](#Project-description)
 - [Model / Architecture](#model--architecture)
-- [Building blocks](#building-blocks)
+  - [Building blocks](#building-blocks)
+  - [Explanation](#explanation)
 - [Dataset](#dataset)
 - [Installation](#installation)
 - [References](#references)
