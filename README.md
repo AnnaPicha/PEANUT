@@ -66,13 +66,13 @@ Since some ideas and key features need to be used in any NNP architecture (e.g. 
 
 ## Key features
 
-If a model is applied to the above described setting, we have to ensure that several symmetry requierements are fullfilled to ensure that physical properties are conserved. This includes translational invariance, rotational invariance and permutational invariance. 
-- Rotational invariance: use distances for radial features and spherical harmonics for angles (or invariant angular descriptors)  
+If a model is applied to the above described setting, we have to ensure that several symmetry requirements are fullfilled to ensure that physical properties are conserved. This includes translational invariance, rotational invariance and permutational invariance. 
+- Rotational invariance: use distances for radial features and spherical harmonics for angles (or other invariant angular descriptors)  
 - Translational invariance: using relative positions only ensures this  
 - Permutational invariance: sum or mean over neighbor messages ensures exchangeability  
 
 ## Representation learning
-The goal of the model is to predict atom-wise energy contributions to a chemical system (e.g. one single moecule). That is, the model needs to learn a suitable representation for each atom in the system. This is usually devided in two key parts: Radial and angular features. Radial features are based on pairwise distances. Angular features are constructed using triplets (this is the part where we need the neighbor list). For both types of features, we can use some fixed descriptors such as symmetry functions, spherical harmonics, Bessel functions etc., that are then passed through a learnable MLP (= represenation learning). In order to reduce computational cost, I want to simplify the representation learning part as follows:  
+The goal of the model is to predict atom-wise energy contributions to a chemical system (e.g. one single moecule). That is, the model needs to learn a suitable representation for each atom in the system. This is usually devided in two key parts: Radial and angular features. Radial features will be based on pairwise distances. Angular features will be constructed using triplets (this is the part where we need the neighbor list). For both types of features, we can use some fixed descriptors such as symmetry functions, spherical harmonics, Bessel functions etc., that are then passed through a learnable MLP (= represenation learning). In order to reduce computational cost, I want to simplify the representation learning part as follows:  
 
  The model will use learned radial features, but fixed angular features. The triplet neighbor list still has to be computed once, but the network does not have to have to apply any additional learning for angular feature extraction. This will surely reduce the network's potential accuracy, but also hopefully reduce computation times.  
 
@@ -81,8 +81,8 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 
 ### Building blocks
 #### Components
-| **Component**              | **What it does**                                                                                       | **Why it’s important**                               |
-|-----------------------------|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| **Component**              | **Explanation**                               |
+|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Node features**           | Atom type embeddings, maybe charges, hybridization                                                    | Basis for all calculations                            |
 | **Edge features**           | Interatomic distances, optionally radial basis expansion                                              | Encodes pairwise geometry                             |
 | **Triplet / angle features**| Angle between bonds for atom triplets                                                                 | Captures directional dependencies                     |
