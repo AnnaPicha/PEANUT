@@ -18,6 +18,8 @@
   - [Explanation](#explanation)
 - [Dataset](#dataset)
 - [Installation](#installation)
+  - [Requirements](#requirements)
+  - [Quick start](#quick-start)
 - [References](#references)
 - [License](#license)
 
