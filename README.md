@@ -13,6 +13,7 @@
 
 ## Table of Contents
 - [Project description](#Project-description)
+  - [Planned workplan](#planned-workplan)
 - [Model / Architecture](#model--architecture)
   - [Building blocks](#building-blocks)
   - [Explanation](#explanation)
@@ -27,13 +28,20 @@
 
 ## Project description
 <!-- Brief project summary: what it does, why it exists, what problem it solves. -->
+I believe my project description matches the project type ''beat the stars'' the most. 
+
+---
+
 In molecular dynamics (MD) simulations, we can replace classical empirical force fields (FF) with neural network potentials to predict potential energy surfaces. Such networks are usually called neural network potentials (NNP) or machine learning potentials (MLP). A combination of potential energy prediction and a so-called `MD engine’ allows for running simulations of chemical systems such as e.g. a small solute in water, which in turn is a very useful tool to replace e.g. costly lab experiments. This method is an already well-known and established tool in computational chemistry.
 
 Given that molecules can be modeled as graphs where atoms are considered as nodes and edges are considered between interacting atoms, the most recent and successful NNPs are designed as graph neural networks (e.g. [DimeNet](https://arxiv.org/abs/2003.03123), [MACE](https://arxiv.org/abs/2206.07697)). These graph neural networks learn embeddings of atom types and use graph convolutions or, more general, message passing, to model atom interactions based on interatomic distances. For example the [SchNet](https://arxiv.org/abs/1706.08566) architecture uses a convolutional neural network architecture for modelling interactions. Other approaches use atom-centered symmetry functions based on distances and angles as feature ([ANI](doi.org/10.1039/C6SC05720A)). This approach is of course less computational expensive, however these architectures do not use learned features.
 
 Generally, such NNPs are trained on single point energies. Thus, their use in MD simulations is definitely an application outside of their training domain, making the task even more difficult. Also, given that MD simulations are computationally highly expensive, the question of how complex a NNP’s architecture can and should be is crucial. Also, given that the use of NNPs in computational chemistry is still quite new, many methods that are already existing in classical MD simulations (using empirical FFs), need to be re-developed for the use of NNPs. For the development of such methods, the overall accuracy is not always the key point. Often, a functional yet not fully accurate NNP would be sufficient to test new methods.
 
-I believe my project description matches the project type ''beat the stars'' the most. 
+Since some ideas and key features need to be used in any NNP architecture (e.g. the use of a neighborlist.) If the use of a complex tool such as the construction of a neighbor list will be required in my neural network architecture, I will try to use existing implementations (for pytorch-based models, this could be for example the neighbor list implementation of [NNPOps](https://github.com/openmm/NNPOps)).
+
+
+### Planned workplan
 
 ---
 
@@ -70,6 +78,10 @@ After N message-passing layers:
 | **Attention** | Simple sigmoid attention on edges.<br>Could be replaced by softmax per node if desired. |
 | **Node update** | Sums messages from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
 | **Multi-scale** | Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
+
+### Model evaluation
+
+Even though the ultimative goal would be running MD simulations with this model, this is quite challenging. Apart from a fully trained model, a use in MD simulations would also require a full integration into an existing MD engine. And of course also several MD simulations, which take a lot of time to run. Therefore, for this lecture, I plan to test my model on single point conformations predicting single point energies only. If the model looks promising, I might reconsider and try to integrate it into an MD engine. However, this would clearly be to much for the goal of this lecture. So this parts remains optional, depending of this project's outcome.
 
 ---
 
