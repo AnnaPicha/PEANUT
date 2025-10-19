@@ -14,7 +14,7 @@
 ## Table of Contents
 - [Project description](#Project-description)
 - [Conceptual workflow](#conceptual-workflow)
-- [Installation](#installation)
+- [Building blocks](#building-blocks)
 - [Usage](#usage)
 - [Examples](#examples)
 - [Model / Architecture](#model--architecture)
@@ -52,6 +52,18 @@ After N message-passing layers:
     6. Sum over all nodes to predict molecular energy
 
 ---
+
+## Building blocks
+
+| **Component**              | **What it does**                                                                                       | **Why it’s important**                               |
+|-----------------------------|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| **Node features**           | Atom type embeddings, maybe charges, hybridization                                                    | Basis for all calculations                            |
+| **Edge features**           | Interatomic distances, optionally radial basis expansion                                              | Encodes pairwise geometry                             |
+| **Triplet / angle features**| Angle between bonds for atom triplets                                                                 | Captures directional dependencies                     |
+| **Message passing / convolution** | Aggregates neighbor info, possibly with learned weights depending on distance/angle             | Where the network learns chemical interactions        |
+| **Update function**         | Updates node features                                                                                 | Allows information to propagate                       |
+| **Readout / pooling**       | Converts node embeddings to molecular energy                                                          | Can be sum, mean, or learned aggregation              |
+
 
 ## Installation
 <!-- Minimal instructions to get started locally. -->
