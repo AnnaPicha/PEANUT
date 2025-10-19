@@ -77,6 +77,32 @@ After N message-passing layers:
 ```  
 Note: In step 1, I will have to use the previously mentioned neighbor list and apply a smooth so-called cutoff function to ensure differentiability.
 
+```markdown
+[Atomic positions r_i] 
+       |
+       v
+[Neighbor list r_ij]  <-- translational invariance via relative positions
+       |
+       v
+[Radial features r_ij]  <-- rotational & translational invariance
+       |
+       v
+[Angular features θ_ijk]  <-- rotational invariance
+       |
+       v
+[Message passing / attention]  <-- permutational invariance
+       |
+       v
+[Node embeddings h_i] 
+       |
+       v
+[Sum/Pooling] --> Energy (invariant)
+       |
+       v
+[Optional: Gradient] --> Forces (equivariant)
+
+```
+
 ---
 
 ## Key features
