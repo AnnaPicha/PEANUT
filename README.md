@@ -80,7 +80,6 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 ---
 
 ### Building blocks
-#### Components
 | **Component**              | **Explanation**                               |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Node features**           | Learned atom type embeddings, basis for all calculations                            |
@@ -95,10 +94,10 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 | **Component** | **Explanation** |
 |----------------|-----------------|
 | **Radial basis** | *RadialBasis* is learnable, taking distances `r_ij` and mapping them to a higher-dimensional embedding. |
-| **Angular basis** | *FixedAngularBasis* uses a cosine expansion of angles.<br>No dihedrals needed → cheap to compute. |
-| **Edge MLP** | Concatenates sender node, receiver node, and radial + angular features.<br>Outputs a learned message embedding for each edge. |
-| **Attention** | Simple sigmoid attention on edges.<br>Could be replaced by softmax per node if desired. |
-| **Node update** | Sums messages from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
+| **Angular basis** | *FixedAngularBasis* e.g. Spherical harmonics or angular Behler-Parinello symmetry functions. |
+| **Edge MLP** | Concatenates sender node (initially these are the embedding vectors), receiver node, and radial + angular features.<br>Outputs a learned message embedding for each edge. |
+| **Attention '\alpha_{ij}'** | Simple sigmoid attention on messages.<br>Could be replaced by softmax per node if desired. |
+| **Node update** | Sums (weighted) messages (`m^{'}_{ij} = \alpha_{ij}\cdot m_{ij}`) from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
 | **Multi-scale** | Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
 
 ### Model evaluation
