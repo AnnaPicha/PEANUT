@@ -42,6 +42,7 @@ Therefore, my goal is to find a possible NNP architecture that imposes an accept
 
 Since some ideas and key features need to be used in any NNP architecture (e.g. the use of a neighborlist.) If the use of a complex tool such as the construction of a neighbor list will be required in my neural network architecture, I will try to use existing implementations (for pytorch-based models, this could be for example the neighbor list implementation of [NNPOps](https://github.com/openmm/NNPOps)).
 
+---
 
 ### Suggestes workplan
 
