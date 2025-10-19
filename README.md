@@ -101,7 +101,7 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 | **Multi-scale** | Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
 
 #### Sketch for attention layer part
-´´´bash
+```bash
 Node i neighbors: j1, j2, j3
 
 Edge MLP: compute m_ij1, m_ij2, m_ij3  <-- message passing
