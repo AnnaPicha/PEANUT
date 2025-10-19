@@ -13,19 +13,12 @@
 
 ## Table of Contents
 - [Project description](#Project-description)
-- [Conceptual workflow](#conceptual-workflow)
-- [Building blocks](#building-blocks)
-- [Usage](#usage)
-- [Examples](#examples)
 - [Model / Architecture](#model--architecture)
+- [Building blocks](#building-blocks)
 - [Dataset](#dataset)
-- [Evaluation](#evaluation)
-- [Development](#development)
-- [Contributing](#contributing)
+- [Installation](#installation)
 - [References](#references)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
-- [Contact](#contact)
 
 ---
 
@@ -39,7 +32,7 @@ Generally, such NNPs are trained on single point energies. Thus, their use in MD
 
 ---
 
-## Conceptual workflow
+## Model / Architecture
 <!-- Bullet-list of main capabilities -->
 Conceptual workflow:  
 For each atom i:  
@@ -79,19 +72,21 @@ After N message-passing layers:
 ## Installation
 <!-- Minimal instructions to get started locally. -->
 ### Requirements
+This is just a place-holder. There is nothing to install yet.
 - Python >= 3.8
-- List of main libraries (e.g., torch, numpy, scikit-learn)
+- pytorch, ...
 
 ### Quick start (example)
+This is just a place-holder. There is nothing to install yet.
+
 ```bash
 # clone
-git clone https://github.com/YOUR_USER/YOUR_REPO.git
-cd YOUR_REPO
+git clone git@github.com:AnnaPicha/PEANUT.git
+cd PEANUT
 
 # create venv (optional)
-python -m venv .venv
-source .venv/bin/activate  # Linux/macOS
-.venv\Scripts\activate     # Windows
+conda create -n peanut
+conda acticte peanut 
 
 # install
 pip install -r requirements.txt
