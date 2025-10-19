@@ -72,7 +72,8 @@ After N message-passing layers:
 ## Installation
 <!-- Minimal instructions to get started locally. -->
 ### Requirements
-This is just a place-holder. There is nothing to install yet.
+This is just a place-holder. There is nothing to install yet.  
+This neural network architecture will be built using pytorch.
 - Python >= 3.8
 - pytorch, ...
 
