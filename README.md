@@ -69,7 +69,7 @@ Some ideas and key features need to be used in any NNP architecture, such as a n
 
 ## Key features
 
-The model will use a combination of deterministic and learned features (see Section representation learning) to construct node features per atom. These node features are finally processed through a MLP to predict potential energy contributions per atom. Finally, the sum of all atom-wise energy contributions shall match the energy of the whole input data (e.g. a molecule).  
+The model will use learned features (see Section representation learning) to construct node features per atom. These node features are finally processed through a MLP to predict potential energy contributions per atom. Finally, the sum of all atom-wise energy contributions shall match the energy of the whole input data (e.g. a molecule).  
 
 If a model is applied to the above described setting, we have to ensure that several symmetry requirements are fullfilled to ensure that physical properties are conserved. This includes translational invariance, rotational invariance and permutational invariance. 
 - Rotational invariance: use distances for radial features and spherical harmonics for angles (or other invariant angular descriptors)  
@@ -82,7 +82,7 @@ Conceptual workflow:
 
 For each atom i:
 1.1. Get neighbors in the cutoff range
-1.2. Compute radial features (learned) and angular features (fixed) for each edge
+1.2. Compute radial and directional features (learned) for each edge
 1.3. Compute attention weights for each neighbor (closer neighbors are chimally more important)
 1.4. Aggregate messages per scale
 1.5. Update node embedding h_i
@@ -102,7 +102,7 @@ Note: In step 1.1., I will have to use the previously mentioned neighbor list an
 [Radial features r_ij]  <-- rotational & translational invariance
        |
        v
-[Angular features θ_ijk]  <-- rotational invariance
+[Directional features θ_ijk]  <-- rotational invariance
        |
        v
 [Message passing / attention]  <-- permutational invariance
@@ -123,9 +123,9 @@ Note: The potential energy will be used to compute forces that act on each atom 
 ---
 
 ## Representation learning
-The goal of the model is to predict atom-wise energy contributions to a chemical system (e.g. one single moecule). That is, the model needs to learn a suitable representation for each atom in the system. This is usually devided in two key parts: Radial and angular features. Radial features will be based on pairwise distances. Angular features will be constructed using triplets (this is the part where we need the neighbor list). For both types of features, we can use some fixed initial descriptors such as symmetry functions, spherical harmonics, Bessel functions etc., that are then passed through a learnable MLP (-> represenation learning). In order to reduce computational cost, I want to simplify the representation learning part as follows:  
+The goal of the model is to predict atom-wise energy contributions to a chemical system (e.g. one single moecule). That is, the model needs to learn a suitable representation for each atom in the system. This is usually devided in two key parts: Radial and angular or directional features. Radial features will be based on pairwise distances. Directional features will be constructed using vector-based descriptors (this is the part where we need the neighbor list). For both types of features, we can use some fixed initial descriptors such as symmetry functions, spherical harmonics, Bessel functions etc., that are then passed through a learnable MLP. The node vectors will be updated iteratively (-> represenation learning). 
 
- The model will use learned radial features, but fixed angular features. The triplet neighbor list still has to be computed once, but the network does not have to have to apply any additional learning for angular feature extraction. This will surely reduce the network's potential accuracy, but also hopefully reduce computation times.  
+Some succesful architectures, such as [MACE](https://doi.org/10.48550/arXiv.2206.07697) or [NequIP](https://www.nature.com/articles/s41467-022-29939-5), explicitly ensure equivariance by using tensor representations instead of vectors. However, my goal is to propose a less accurate but hopefully faster architecture. Therefore, I plan to only use a directional edge representation. This design retains directional awareness at much lower computational cost compared to real equivariant networks. This will surely reduce the network's potential accuracy, but also hopefully reduce computation times.  
 
 
 ---
@@ -225,6 +225,9 @@ mamba install -c conda-forge pytorch nnpops
 
 5. **[ANI-1: An Extensible Neural Network Potential with DFT Accuracy at Force Field Computational Cost](https://doi.org/10.1039/C6SC05720A)**  
    J. S. Smith, O. Isayev, A. E. Roitberg, 2017. *DOI: 10.1039/C6SC05720A*
+
+6. **[E(3)-equivariant graph neural networks for data-efficient and accurate interatomic potentials](https://www.nature.com/articles/s41467-022-29939-5)**  
+   Batzner, S., Musaelian, A., Sun, L. et al., 2022. *doi.org/10.1038/s41467-022-29939-5*
 
 ---
 
