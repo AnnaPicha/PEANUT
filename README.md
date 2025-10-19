@@ -54,7 +54,7 @@ After N message-passing layers:
 ---
 
 ## Building blocks
-
+### Components
 | **Component**              | **What it does**                                                                                       | **Why it’s important**                               |
 |-----------------------------|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
 | **Node features**           | Atom type embeddings, maybe charges, hybridization                                                    | Basis for all calculations                            |
@@ -63,6 +63,17 @@ After N message-passing layers:
 | **Message passing / convolution** | Aggregates neighbor info, possibly with learned weights depending on distance/angle             | Where the network learns chemical interactions        |
 | **Update function**         | Updates node features                                                                                 | Allows information to propagate                       |
 | **Readout / pooling**       | Converts node embeddings to molecular energy                                                          | Can be sum, mean, or learned aggregation              |
+
+### Explanation
+
+| **Component** | **Explanation** |
+|----------------|-----------------|
+| **Radial basis** | *RadialBasis* is learnable, taking distances `r_ij` and mapping them to a higher-dimensional embedding. |
+| **Angular basis** | *FixedAngularBasis* uses a cosine expansion of angles.<br>No dihedrals needed → cheap to compute. |
+| **Edge MLP** | Concatenates sender node, receiver node, and radial + angular features.<br>Outputs a learned message embedding for each edge. |
+| **Attention** | Simple sigmoid attention on edges.<br>Could be replaced by softmax per node if desired. |
+| **Node update** | Sums messages from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
+| **Multi-scale** | Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
 
 
 ## Installation
