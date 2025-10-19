@@ -74,6 +74,10 @@ For each atom i:
 
 After N message-passing layers:
 1. Sum over all nodes to predict molecular energy
+```  
+Note. In step 1, I will have to use the previously mentioned neighbor list and apply a smooth so-called cutoff function to ensure differentiability.
+
+
 
 ### Building blocks
 #### Components
