@@ -149,11 +149,6 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 | **Node update** | Sums (weighted) messages (`m^{'}_{ij} = \alpha_{ij}\cdot m_{ij}`) from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
 | **Multi-scale** (Optional) | Optional use of 2-3 different edge MLPs to allows different treatments of neighboring atoms based on distance. Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
 
-
-### Challenges
-
-I am not sure if the use of attention layers and / or multi-scale edge MLPs are very costly. Also, I am not sure what the profit is. I do want to try using both of them to give near neighbors a higher relevance to the central atoms. But if this does not help a lot or is too costly, I might remove these parts.
-
 #### Sketch for attention layer part
 ```bash
 Node i neighbors: j1, j2, j3
@@ -164,6 +159,12 @@ Weighted messages: α_ij * m_ij
 Aggregate: sum/mean → updated node embedding h_i
 
 ```
+
+### Challenges
+
+I am not sure if the use of attention layers and / or multi-scale edge MLPs are very costly. Also, I am not sure what the profit is. I do want to try using both of them to give near neighbors a higher relevance to the central atoms. But if this does not help a lot or is too costly, I might remove these parts.
+
+
 
 ### Model evaluation
 
