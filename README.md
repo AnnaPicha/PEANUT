@@ -41,15 +41,15 @@ Generally, such NNPs are trained on single point energies. Thus, their use in MD
 
 ## Conceptual workflow
 <!-- Bullet-list of main capabilities -->
-Conceptual workflow:
-For each atom i:
-    1. Get neighbors in short and medium cutoff ranges
-    2. Compute radial features (learned) and angular features (fixed) for each edge
-    3. Compute attention weights for each neighbor
-    4. Aggregate messages per scale
-    5. Update node embedding h_i
-After N message-passing layers:
-    6. Sum over all nodes to predict molecular energy
+Conceptual workflow:  
+For each atom i:  
+    1. Get neighbors in short and medium cutoff ranges  
+    2. Compute radial features (learned) and angular features (fixed) for each edge  
+    3. Compute attention weights for each neighbor  
+    4. Aggregate messages per scale  
+    5. Update node embedding h_i  
+After N message-passing layers:  
+    6. Sum over all nodes to predict molecular energy  
 
 ---
 
