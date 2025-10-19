@@ -62,48 +62,7 @@ Since some ideas and key features need to be used in any NNP architecture (e.g. 
 
 ## Model / Architecture
 <!-- Bullet-list of main capabilities -->
-```markdown
-Conceptual workflow:
 
-For each atom i:
-1. Get neighbors in the cutoff range
-2. Compute radial features (learned) and angular features (fixed) for each edge
-3. Compute attention weights for each neighbor (closer neighbors are chimally more important)
-4. Aggregate messages per scale
-5. Update node embedding h_i
-
-After N message-passing layers:
-1. Sum over all nodes to predict molecular energy
-```  
-Note: In step 1, I will have to use the previously mentioned neighbor list and apply a smooth so-called cutoff function to ensure differentiability.
-
-```markdown
-[Atomic positions r_i] 
-       |
-       v
-[Neighbor list r_ij]  <-- translational invariance via relative positions
-       |
-       v
-[Radial features r_ij]  <-- rotational & translational invariance
-       |
-       v
-[Angular features θ_ijk]  <-- rotational invariance
-       |
-       v
-[Message passing / attention]  <-- permutational invariance
-       |
-       v
-[Node embeddings h_i] 
-       |
-       v
-[Sum/Pooling] --> Energy (invariant)
-       |
-       v
-[Optional: Gradient] --> Forces (equivariant)
-
-```
-
----
 
 ## Key features
 
@@ -145,6 +104,49 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 ### Model evaluation
 
 Even though the ultimative goal would be running MD simulations with this model, this is quite challenging. Apart from a fully trained model, a use in MD simulations would also require a full integration into an existing MD engine. And of course also several MD simulations, which take a lot of time to run. Therefore, for this lecture, I plan to test my model on single point conformations predicting single point energies only. If the model looks promising, I might reconsider and try to integrate it into an MD engine. However, this would clearly be to much for the goal of this lecture. So this parts remains optional, depending of this project's outcome.
+
+---
+
+```markdown
+Conceptual workflow:
+
+For each atom i:
+1. Get neighbors in the cutoff range
+2. Compute radial features (learned) and angular features (fixed) for each edge
+3. Compute attention weights for each neighbor (closer neighbors are chimally more important)
+4. Aggregate messages per scale
+5. Update node embedding h_i
+
+After N message-passing layers:
+1. Sum over all nodes to predict molecular energy
+```  
+Note: In step 1, I will have to use the previously mentioned neighbor list and apply a smooth so-called cutoff function to ensure differentiability.
+
+```markdown
+[Atomic positions r_i] 
+       |
+       v
+[Neighbor list r_ij]  <-- translational invariance via relative positions
+       |
+       v
+[Radial features r_ij]  <-- rotational & translational invariance
+       |
+       v
+[Angular features θ_ijk]  <-- rotational invariance
+       |
+       v
+[Message passing / attention]  <-- permutational invariance
+       |
+       v
+[Node embeddings h_i] 
+       |
+       v
+[Sum/Pooling] --> Energy (invariant)
+       |
+       v
+[Optional: Gradient] --> Forces (equivariant)
+
+```
 
 ---
 
