@@ -73,6 +73,50 @@ If a model is applied to the above described setting, we have to ensure that sev
 - Translational invariance: using relative positions only ensures this  
 - Permutational invariance: sum or mean over neighbor messages ensures exchangeability  
 
+
+```markdown
+Conceptual workflow:
+
+For each atom i:
+1.1. Get neighbors in the cutoff range
+1.2. Compute radial features (learned) and angular features (fixed) for each edge
+1.3. Compute attention weights for each neighbor (closer neighbors are chimally more important)
+1.4. Aggregate messages per scale
+1.5. Update node embedding h_i
+
+After N message-passing layers:
+2.1. Sum over all nodes to predict molecular energy
+```  
+Note: In step 1.1., I will have to use the previously mentioned neighbor list and apply a smooth so-called cutoff function to ensure differentiability.
+
+```markdown
+[Atomic positions r_i] 
+       |
+       v
+[Neighbor list r_ij]  <-- translational invariance via relative positions
+       |
+       v
+[Radial features r_ij]  <-- rotational & translational invariance
+       |
+       v
+[Angular features θ_ijk]  <-- rotational invariance
+       |
+       v
+[Message passing / attention]  <-- permutational invariance
+       |
+       v
+[Node embeddings h_i] 
+       |
+       v
+[Sum/Pooling] --> Energy (invariant)
+       |
+       v
+[Optional: Gradient] --> Forces (equivariant)
+
+```
+
+---
+
 ## Representation learning
 The goal of the model is to predict atom-wise energy contributions to a chemical system (e.g. one single moecule). That is, the model needs to learn a suitable representation for each atom in the system. This is usually devided in two key parts: Radial and angular features. Radial features will be based on pairwise distances. Angular features will be constructed using triplets (this is the part where we need the neighbor list). For both types of features, we can use some fixed descriptors such as symmetry functions, spherical harmonics, Bessel functions etc., that are then passed through a learnable MLP (= represenation learning). In order to reduce computational cost, I want to simplify the representation learning part as follows:  
 
@@ -105,7 +149,7 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 
 ### Challenges
 
-I am not sure if the use of attention layers and / or multi-scale edge MLPs is very costly. Also, I am not sure what the profit is. I do want to try using both of them to give neir neighbors a higher influence on the central atoms. But if this does not help a lot or is too costly, I might remove these parts.
+I am not sure if the use of attention layers and / or multi-scale edge MLPs are very costly. Also, I am not sure what the profit is. I do want to try using both of them to give near neighbors a higher relevance to the central atoms. But if this does not help a lot or is too costly, I might remove these parts.
 
 #### Sketch for attention layer part
 ```bash
@@ -124,48 +168,6 @@ Even though the ultimative goal would be running MD simulations with this model,
 
 ---
 
-```markdown
-Conceptual workflow:
-
-For each atom i:
-1. Get neighbors in the cutoff range
-2. Compute radial features (learned) and angular features (fixed) for each edge
-3. Compute attention weights for each neighbor (closer neighbors are chimally more important)
-4. Aggregate messages per scale
-5. Update node embedding h_i
-
-After N message-passing layers:
-1. Sum over all nodes to predict molecular energy
-```  
-Note: In step 1, I will have to use the previously mentioned neighbor list and apply a smooth so-called cutoff function to ensure differentiability.
-
-```markdown
-[Atomic positions r_i] 
-       |
-       v
-[Neighbor list r_ij]  <-- translational invariance via relative positions
-       |
-       v
-[Radial features r_ij]  <-- rotational & translational invariance
-       |
-       v
-[Angular features θ_ijk]  <-- rotational invariance
-       |
-       v
-[Message passing / attention]  <-- permutational invariance
-       |
-       v
-[Node embeddings h_i] 
-       |
-       v
-[Sum/Pooling] --> Energy (invariant)
-       |
-       v
-[Optional: Gradient] --> Forces (equivariant)
-
-```
-
----
 
 ## Dataset
 
