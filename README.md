@@ -75,9 +75,19 @@ For each atom i:
 After N message-passing layers:
 1. Sum over all nodes to predict molecular energy
 ```  
-Note. In step 1, I will have to use the previously mentioned neighbor list and apply a smooth so-called cutoff function to ensure differentiability.
+Note: In step 1, I will have to use the previously mentioned neighbor list and apply a smooth so-called cutoff function to ensure differentiability.
+
+---
+
+## Key features
+
+If a model is applied to the above described setting, we have to ensure that several symmetry requierements are fullfilled to ensure that physical properties are conserved. This includes translational invariance, rotational invariance and permutational invariance. 
+- Rotational invariance: use distances for radial features and spherical harmonics for angles (or invariant angular descriptors)  
+- Translational invariance: using relative positions only ensures this  
+- Permutational invariance: sum or mean over neighbor messages ensures exchangeability  
 
 
+---
 
 ### Building blocks
 #### Components
