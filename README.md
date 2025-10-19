@@ -13,7 +13,7 @@
 
 ## Table of Contents
 - [Project description](#Project-description)
-  - [Planned workplan](#planned-workplan)
+  - [Suggestes workplan](#suggested-workplan)
 - [Model / Architecture](#model--architecture)
   - [Building blocks](#building-blocks)
   - [Explanation](#explanation)
@@ -43,7 +43,20 @@ Therefore, my goal is to find a possible NNP architecture that imposes an accept
 Since some ideas and key features need to be used in any NNP architecture (e.g. the use of a neighborlist.) If the use of a complex tool such as the construction of a neighbor list will be required in my neural network architecture, I will try to use existing implementations (for pytorch-based models, this could be for example the neighbor list implementation of [NNPOps](https://github.com/openmm/NNPOps)).
 
 
-### Planned workplan
+### Suggestes workplan
+
+## Suggested Timeline / Workplan
+
+| Phase | Timeframe | Goals | Key Tasks | Milestone |
+|-------|-----------|-------|-----------|-----------|
+| 1. Planning & Setup | Mid Oct – End Oct | Finalize dataset selection, set up environment, define initial architecture | - Decide on datasets (ANI-2x, SPICE) and download subsets<br>- Set up Python environment and dependencies (PyTorch, data loaders)<br>- Write basic scripts to load/visualize data<br>- Draft initial model architecture outline<br>- Create initial README and project plan | Environment ready, dataset downloaded, first model outline completed |
+| 2. Prototype Architecture | Early Nov – Mid Nov | Implement basic neural network, ensure data flows through the model | - Implement node/edge features and basic message-passing layers<br>- Implement readout/pooling for energy prediction<br>- Run small-scale tests on dataset subset<br>- Debug tensor shapes, feature dimensions, edge cases | Working prototype of neural network producing energy predictions |
+| 3. Feature & Block Refinement | Mid Nov – End Nov | Add full set of building blocks, optimize model structure | - Implement radial basis, angular basis, edge MLP fully<br>- Add multi-scale message passing<br>- Implement attention mechanism and node update functions<br>- Run small-scale training to validate stability | Full model implemented with all planned building blocks |
+| 4. Training & Evaluation | Early Dec – Mid Dec | Train on larger datasets, evaluate accuracy | - Train on small subsets for debugging<br>- Scale up to full dataset<br>- Evaluate using MAE, RMSE<br>- Adjust hyperparameters (learning rate, batch size, layers) | Model trained and evaluated; preliminary results available |
+| 5. Optimization & Final Experiments | Mid Dec – End Dec | Improve model performance, compare with benchmarks | - Test alternative architectures if needed<br>- Perform hyperparameter tuning<br>- Document experiments and results<br>- Optional: run small MD simulations | Finalized model with experimental results ready |
+| 6. Documentation & Report | Early Jan – Mid Jan | Prepare final report, README, and visualizations | - Write detailed README (architecture, dataset, results, usage)<br>- Create diagrams for model workflow and building blocks<br>- Summarize training results, tables, plots<br>- Write additional project documentation | Documentation complete and ready for submission/sharing |
+| 7. Buffer & Final Review | Mid Jan – End Jan | Final polish and bug fixes | - Fix any remaining bugs/issues<br>- Re-run experiments if needed<br>- Final proofreading of documentation<br>- Push everything to GitHub | Project completed and fully documented by end of January |
+
 
 ---
 
