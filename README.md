@@ -13,7 +13,7 @@
 
 ## Table of Contents
 - [Project description](#Project-description)
-- [Features](#features)
+- [Conceptual workflow](#conceptual-workflow)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
@@ -39,12 +39,17 @@ Generally, such NNPs are trained on single point energies. Thus, their use in MD
 
 ---
 
-## Features
+## Conceptual workflow
 <!-- Bullet-list of main capabilities -->
-- Predicts potential energy surfaces from input XYZ / features
-- Fast inference, low compute cost
-- Uncertainty estimation (optional)  
-- Exportable model (ONNX / TorchScript) (optional)
+Conceptual workflow:
+For each atom i:
+    1. Get neighbors in short and medium cutoff ranges
+    2. Compute radial features (learned) and angular features (fixed) for each edge
+    3. Compute attention weights for each neighbor
+    4. Aggregate messages per scale
+    5. Update node embedding h_i
+After N message-passing layers:
+    6. Sum over all nodes to predict molecular energy
 
 ---
 
