@@ -66,9 +66,9 @@ Since some ideas and key features need to be used in any NNP architecture (e.g. 
 Conceptual workflow:
 
 For each atom i:
-1. Get neighbors in short and medium cutoff ranges
+1. Get neighbors in the cutoff range
 2. Compute radial features (learned) and angular features (fixed) for each edge
-3. Compute attention weights for each neighbor
+3. Compute attention weights for each neighbor (closer neighbors are chimally more important)
 4. Aggregate messages per scale
 5. Update node embedding h_i
 
@@ -115,7 +115,8 @@ If a model is applied to the above described setting, we have to ensure that sev
 ## Representation learning
 The goal of the model is to predict atom-wise energy contributions to a chemical system (e.g. one single moecule). That is, the model needs to learn a suitable representation for each atom in the system. This is usually devided in two key parts: Radial and angular features. Radial features are based on pairwise distances where the neighbor list comes into play. Angular features are constructed using triplets, e.g. a triplet neighbor list is required as well. For both types of features, we can use some fixed descriptors such as symmetry functions, spherical harmonics, Besser functions etc., that are then passed through a learnable MLP (= represenation learning). In order to reduce computational cost, I want to simplify the representation learning part as follows:  
 
- The model will use learned radial features, but fixed angular features. The triplet neighbor list still has to be computed once, but the network does not have to have to apply any additional learning for angular feature extraction. This will surely reduce the network's potential accuracy, but also hopefully reduce computation times.
+ The model will use learned radial features, but fixed angular features. The triplet neighbor list still has to be computed once, but the network does not have to have to apply any additional learning for angular feature extraction. This will surely reduce the network's potential accuracy, but also hopefully reduce computation times.  
+
 
 ---
 
