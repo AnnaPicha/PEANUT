@@ -118,7 +118,7 @@ Note: In step 1.1., I will have to use the previously mentioned neighbor list an
 
 ```
 
-Note: The potential energy will be used to compute forces that act on each atom (F = -Nabla U). In case forces will be used during the training, the energy gradients can also provide an auxiliary supervision signal.
+Note: The potential energy will be used to compute forces that act on each atom (F = -\Nabla U). In case forces will be used during the training, the energy gradients can also provide an auxiliary supervision signal.
 
 ---
 
