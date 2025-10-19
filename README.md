@@ -45,7 +45,6 @@ Since some ideas and key features need to be used in any NNP architecture (e.g. 
 
 ### Suggestes workplan
 
-## Suggested Timeline / Workplan
 
 | Phase | Timeframe | Goals | Key Tasks | Milestone |
 |-------|-----------|-------|-----------|-----------|
