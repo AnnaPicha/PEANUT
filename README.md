@@ -68,6 +68,8 @@ Since some ideas and key features need to be used in any NNP architecture (e.g. 
 
 ## Key features
 
+The model will use a combination of deterministic and learned features (see Section representation learning) to construct node features per atom. These node features are finally processed through a MLP to predict potential energy contributions per atom. Finally, the sum of all atom-wise energy contributions shall match the energy of the whole input data (e.g. a molecule).  
+
 If a model is applied to the above described setting, we have to ensure that several symmetry requirements are fullfilled to ensure that physical properties are conserved. This includes translational invariance, rotational invariance and permutational invariance. 
 - Rotational invariance: use distances for radial features and spherical harmonics for angles (or other invariant angular descriptors)  
 - Translational invariance: using relative positions only ensures this  
