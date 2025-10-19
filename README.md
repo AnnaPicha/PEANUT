@@ -149,7 +149,7 @@ Some succesful architectures, such as [MACE](https://doi.org/10.48550/arXiv.2206
 | **Directional basis** `Y_{ij}`| *DirectionalBasis* e.g. Vector-based Spherical harmonics of rank `l` (`Y_{ij} = Y_l(r_{ij})`|
 | **Edge MLP** | Concatenates sender node (initially these are the embedding vectors), receiver node, and radial + angular features.<br>Outputs a learned message embedding for each edge. `m_{ij} = MLP(h_i, h_j, b_{ij}, Y_{ij})`|
 | **Attention** `\alpha_{ij}` | Simple attention on messages (sigmoid or softmax).<br>Could be replaced by softmax per node if desired. |
-| **Node update** | Sums (weighted) messages (`m^{'}_{ij} = \alpha_{ij}\cdot m_{ij}`) from neighbors.<br>Passes the result through a small MLP for the new node embedding. |
+| **Node update** | Sums (weighted) messages (`m^{'}_{ij} = \alpha_{ij}\cdot m_{ij}`) from neighbors.<br>Passes the result through a small MLP for the new node embedding to get updated nodes vectors. `h^{n+1}_i = MLP(h^{n}_i, (m^{'}_ij)_j)`|
 | **Multi-scale** (Optional) | Optional use of 2-3 different edge MLPs to allows different treatments of neighboring atoms based on distance. Can be implemented by calling this layer separately on different neighbor lists, then summing messages before the node MLP. |
 
 #### Sketch for attention layer part
