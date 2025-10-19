@@ -18,6 +18,7 @@
   - [Building blocks](#building-blocks)
   - [Tool box](#tool-box)
   - [Challenges](#challenges)
+  - [Model evaluation](#model-evaluation)
 - [Dataset](#dataset)
 - [Installation](#installation)
   - [Requirements](#requirements)
