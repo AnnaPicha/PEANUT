@@ -209,11 +209,12 @@ mamba install -c conda-forge pytorch nnpops
 
 Model architectures:  
 
-[1] https://arxiv.org/abs/2003.03123  
-[2] doi.org/10.48550/arXiv.2206.07697  
-[3] doi.org/10.1021/jacs.4c07099  
-[4] https://arxiv.org/abs/1706.08566  
-[5] doi.org/10.1039/C6SC05720A  
+[1] Directional Message Passing for Molecular Graphs, Johannes Gasteiger and Janek Groß and Stephan Günnemann, 2022, https://doi.org/10.48550/arXiv.2003.03123 
+[2] MACE: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields, Ilyes Batatia and Dávid Péter Kovács and Gregor N. C. Simm and Christoph Ortner and Gábor Csányi, 2023,   
+https://doi.org/10.48550/arXiv.2206.07697
+[3] MACE-OFF: Short-Range Transferable Machine Learning Force Fields for Organic Molecules, Dávid Péter Kovács, J. Harry Moore, Nicholas J. Browning, Ilyes Batatia, Joshua T. Horton, Yixuan Pu, Venkat Kapil, William C. Witt, Ioan-Bogdan Magdău, Daniel J. Cole, and Gábor Csányi, 2025, doi.org/10.1021/jacs.4c07099  
+[4] SchNet: A continuous-filter convolutional neural network for modeling quantum interactions, Kristof T. Schütt and Pieter-Jan Kindermans and Huziel E. Sauceda and Stefan Chmiela and Alexandre Tkatchenko and Klaus-Robert Müller, 2017, https://arxiv.org/abs/1706.08566  
+[5] ANI-1: an extensible neural network potential with DFT accuracy at force field computational cost,  J. S. Smith, O. Isayev and  A. E. Roitberg, 2017, doi.org/10.1039/C6SC05720A  
 
 Datasets:  
 [ANI-2x](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.0c00121)
