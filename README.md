@@ -118,10 +118,12 @@ Note: In step 1.1., I will have to use the previously mentioned neighbor list an
 
 ```
 
+Note: The potential energy will be used to compute forces that act on each atom (F = -Nabla U). In case forces will be used during the training, the energy gradients can also provide an auxiliary supervision signal.
+
 ---
 
 ## Representation learning
-The goal of the model is to predict atom-wise energy contributions to a chemical system (e.g. one single moecule). That is, the model needs to learn a suitable representation for each atom in the system. This is usually devided in two key parts: Radial and angular features. Radial features will be based on pairwise distances. Angular features will be constructed using triplets (this is the part where we need the neighbor list). For both types of features, we can use some fixed descriptors such as symmetry functions, spherical harmonics, Bessel functions etc., that are then passed through a learnable MLP (= represenation learning). In order to reduce computational cost, I want to simplify the representation learning part as follows:  
+The goal of the model is to predict atom-wise energy contributions to a chemical system (e.g. one single moecule). That is, the model needs to learn a suitable representation for each atom in the system. This is usually devided in two key parts: Radial and angular features. Radial features will be based on pairwise distances. Angular features will be constructed using triplets (this is the part where we need the neighbor list). For both types of features, we can use some fixed initial descriptors such as symmetry functions, spherical harmonics, Bessel functions etc., that are then passed through a learnable MLP (-> represenation learning). In order to reduce computational cost, I want to simplify the representation learning part as follows:  
 
  The model will use learned radial features, but fixed angular features. The triplet neighbor list still has to be computed once, but the network does not have to have to apply any additional learning for angular feature extraction. This will surely reduce the network's potential accuracy, but also hopefully reduce computation times.  
 
