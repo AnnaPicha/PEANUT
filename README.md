@@ -22,7 +22,7 @@
 - [Evaluation](#evaluation)
 - [Development](#development)
 - [Contributing](#contributing)
-- [References] (#references)
+- [References](#references)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
