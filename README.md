@@ -84,10 +84,10 @@ The goal of the model is to predict atom-wise energy contributions to a chemical
 ### Building blocks
 | **Component**              | **Explanation**                               |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Node features**           | Learned atom type embeddings, basis for all calculations                            |
-| **Edge features**           | Interatomic distances, optionally radial basis expansion -> Encodes pairwise geometry                             |
-| **Triplet / angle features**| Angle between bonds for atom triplets to capture directional dependencies                     |
-| **Message passing / convolution** | Aggregates neighbor information, possibly with learned weights depending on distance/angle (attention layer) -> the network learns chemical interactions        |
+| **Node features**           | Learned atom type embeddings `h_i`, basis for all calculations                            |
+| **Edge features**           | Interatomic distances `r_ij`, optionally radial basis expansion -> Encodes pairwise geometry                             |
+| **Triplet / angle features**| Angle between bonds for atom triplets to capture directional dependencies. `v_{ijk}`                     |
+| **Message passing / graph NN** | Aggregates neighbor information, possibly with learned weights depending on distance/angle (attention layer) -> the network learns chemical interactions        |
 | **Update function**         | Updates node features  to allow information to propagate                       |
 | **Readout / pooling**       | Converts node embeddings to molecular energy. Can be sum, mean, or learned aggregation              |
 
