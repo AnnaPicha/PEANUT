@@ -67,3 +67,12 @@ source .venv/bin/activate  # Linux/macOS
 
 # install
 pip install -r requirements.txt
+
+---
+
+## References
+[1] https://arxiv.org/abs/2003.03123
+[2] doi.org/10.48550/arXiv.2206.07697
+[3] doi.org/10.1021/jacs.4c07099
+[4] https://arxiv.org/abs/1706.08566
+[5] doi.org/10.1039/C6SC05720A
