@@ -65,8 +65,8 @@ Some ideas and key features need to be used in any NNP architecture, such as a n
 
 ## Model / Architecture
 <!-- Bullet-list of main capabilities -->
+<img width="1209" height="539" alt="peanut_flowchart" src="https://github.com/user-attachments/assets/b62476b9-f38b-4592-8755-7b3dfee583d1" />
 
-<img width="1209" height="539" alt="peanut_flowchart" src="https://github.com/user-attachments/assets/ab10a8cb-be1a-4f74-b1f9-076d7bb2a5ef" />
 
 ## Key features
 
