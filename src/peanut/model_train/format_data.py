@@ -164,6 +164,15 @@ def format_data_from_hdf5(dataset: str):
 
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
 
+    xyz_file = os.path.join(repo_root, 'data', f'{dataset}.xyz')
+    pt_file = os.path.join(repo_root, 'data', f'{dataset}.pt')
+
+    # Prüfen, ob die Dateien schon existieren
+    if os.path.exists(xyz_file) or os.path.exists(pt_file):
+        print('#' * 100)
+        raise FileExistsError(f"ERROR: '{xyz_file}' or '{pt_file}' already exists! Aborting.")
+
+
     format_data_xyz(repo_root=repo_root, dataset=dataset)
     xyz_to_pt(repo_root=repo_root, xyz_file_name=dataset)
 
