@@ -11,8 +11,8 @@
 
 ---
 
-<!-- <a href="https://annapicha.github.io/PEANUT/" target="_blank">PEANUT Documentation</a> -->
-[PEANUT Documentation](https://annapicha.github.io/PEANUT/) (öffnet in neuem Tab: Rechtsklick → "Link in neuem Tab öffnen")
+<a href="https://annapicha.github.io/PEANUT/" target="_blank">PEANUT Documentation</a>
+
 
 
 ## Table of Contents
