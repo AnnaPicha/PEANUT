@@ -15,3 +15,26 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
+
+Flowchart
+=========
+
+Flowchart for PEANUT model:
+
+.. image:: _static/peanut_flowchart.png
+   :alt: PEANUT Flowchart
+   :width: 400px
+
+
+Theory
+======
+
+
+
+Inline-Formular: :math:`E = mc^2`
+
+Block-Formular:
+
+.. math::
+
+   F = ma
