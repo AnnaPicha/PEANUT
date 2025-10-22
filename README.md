@@ -208,6 +208,12 @@ Then you can run a test with
 ```bash
 pytest tests/test_building_blocks.py -s
 ```
+
+In case you want to do the model training, you have to convert the dataset (in the repository data folder you can find the hdf5 file). To convert the file to .xyz and .pt format, you additionally need to install the extxyz package:
+
+```bash
+pip install git+https://github.com/libAtoms/extxyz
+``
 ---
 
 ## References
