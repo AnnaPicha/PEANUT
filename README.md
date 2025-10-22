@@ -213,7 +213,7 @@ In case you want to do the model training, you have to convert the dataset (in t
 
 ```bash
 pip install git+https://github.com/libAtoms/extxyz
-``
+```
 ---
 
 ## References
