@@ -23,7 +23,7 @@ Flowchart for PEANUT model:
 
 .. image:: _static/peanut_flowchart.png
    :alt: PEANUT Flowchart
-   :width: 400px
+   :width: 1000px
 
 
 Theory
