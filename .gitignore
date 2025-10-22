@@ -57,6 +57,7 @@ desktop.ini
 # -------------------------------
 # Große oder temporäre Daten, die nicht versioniert werden sollen
 data/a_wpS.xyz
+data/a_wpS.pt
 # Dein festes HDF5-File bleibt im Repo, deshalb nicht ausgeschlossen:
 # data/a_wpS.hdf5
 
