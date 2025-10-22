@@ -55,13 +55,10 @@ desktop.ini
 # -------------------------------
 # Data & Artifacts
 # -------------------------------
-# Falls du temporäre oder generierte Daten hättest, würdest du sie hier ignorieren.
-# Dein festes HDF5-File bleibt erhalten, deshalb KEIN Ausschluss von /data/
-# Beispiel: falls du später Trainingsausgaben speichern willst:
-# outputs/
-# results/
-# logs/
+# Große oder temporäre Daten, die nicht versioniert werden sollen
 data/a_wpS.xyz
+# Dein festes HDF5-File bleibt im Repo, deshalb nicht ausgeschlossen:
+# data/a_wpS.hdf5
 
 # -------------------------------
 # Jupyter Notebooks
