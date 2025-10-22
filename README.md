@@ -187,15 +187,12 @@ I plan to use already existing datasets for the training of my neural network. T
 ## Installation
 <!-- Minimal instructions to get started locally. -->
 ### Requirements
-This is just a place-holder. There is nothing to install yet.  
+ 
 This neural network architecture will be built using pytorch.
-- Python >= 3.8
-- pytorch, ...
 
 ### Quick start
 
 ```bash
-# clone
 git clone git@github.com:AnnaPicha/PEANUT.git
 cd PEANUT
 
@@ -204,6 +201,12 @@ conda activate peanut
 
 # install
 pip install -e .
+```
+
+Then you can run a test with
+
+```bash
+pytest tests/test_building_blocks.py -s
 ```
 ---
 
