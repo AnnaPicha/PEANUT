@@ -10,6 +10,7 @@
 </p>
 
 ---
+docs at https://annapicha.github.io/PEANUT/
 
 ## Table of Contents
 - [Project description](#Project-description)
