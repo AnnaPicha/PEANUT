@@ -193,20 +193,17 @@ This neural network architecture will be built using pytorch.
 - pytorch, ...
 
 ### Quick start
-This is just a place-holder. There is nothing to install yet.
 
 ```bash
 # clone
 git clone git@github.com:AnnaPicha/PEANUT.git
 cd PEANUT
 
-# create venv (optional)
-conda create -n peanut
+conda create -n peanut python=3.12
 conda activate peanut 
 
 # install
-pip install -r requirements.txt
-mamba install -c conda-forge pytorch nnpops
+pip install -e .
 ```
 ---
 

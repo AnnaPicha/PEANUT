@@ -21,7 +21,9 @@ dependencies = [
     "numpy",
     "scipy",
     "pandas",
-    "matplotlib"
+    "matplotlib",
+    "pytest",
+    "e3nn"
 ]
 
 [project.optional-dependencies]
