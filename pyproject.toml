@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "peanut"
+version = "0.1.0"
+description = "A small research package for model training and data formatting."
+readme = "README.md"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = [
+    "ase",
+    "torch",
+    "rdkit",
+    "tqdm",
+    "h5py",
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib",
+    "pytest",
+    "e3nn"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8",
+    "jupyter"
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true  # ✅ korrigiert!
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+peanut = ["data/*.hdf5"]

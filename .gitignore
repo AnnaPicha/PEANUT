@@ -1,0 +1,73 @@
+# -------------------------------
+# Python Build & Cache Files
+# -------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# -------------------------------
+# Virtual Environments
+# -------------------------------
+.venv/
+venv/
+env/
+ENV/
+.conda/
+*.env
+
+# -------------------------------
+# Distribution / Packaging
+# -------------------------------
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# -------------------------------
+# IDE & Editor Files
+# -------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# -------------------------------
+# Test & Coverage Artifacts
+# -------------------------------
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+pytest_cache/
+
+# -------------------------------
+# OS / System Files
+# -------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------------
+# Data & Artifacts
+# -------------------------------
+# Große oder temporäre Daten, die nicht versioniert werden sollen
+data/a_wpS.xyz
+# Dein festes HDF5-File bleibt im Repo, deshalb nicht ausgeschlossen:
+# data/a_wpS.hdf5
+
+# -------------------------------
+# Jupyter Notebooks
+# -------------------------------
+.ipynb_checkpoints/
+
+# -------------------------------
+# Optional: Typing Cache (mypy, pyright)
+# -------------------------------
+.mypy_cache/
+.pytype/
+.pyre/

@@ -187,26 +187,32 @@ I plan to use already existing datasets for the training of my neural network. T
 ## Installation
 <!-- Minimal instructions to get started locally. -->
 ### Requirements
-This is just a place-holder. There is nothing to install yet.  
+ 
 This neural network architecture will be built using pytorch.
-- Python >= 3.8
-- pytorch, ...
 
 ### Quick start
-This is just a place-holder. There is nothing to install yet.
 
 ```bash
-# clone
 git clone git@github.com:AnnaPicha/PEANUT.git
 cd PEANUT
 
-# create venv (optional)
-conda create -n peanut
+conda create -n peanut python=3.12
 conda activate peanut 
 
 # install
-pip install -r requirements.txt
-mamba install -c conda-forge pytorch nnpops
+pip install -e .
+```
+
+Then you can run a test with
+
+```bash
+pytest tests/test_building_blocks.py -s
+```
+
+In case you want to do the model training, you have to convert the dataset (in the repository data folder you can find the hdf5 file). To convert the file to .xyz and .pt format, you additionally need to install the extxyz package:
+
+```bash
+pip install git+https://github.com/libAtoms/extxyz
 ```
 ---
 
