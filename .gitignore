@@ -1,0 +1,76 @@
+# -------------------------------
+# Python Build & Cache Files
+# -------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# -------------------------------
+# Virtual Environments
+# -------------------------------
+.venv/
+venv/
+env/
+ENV/
+.conda/
+*.env
+
+# -------------------------------
+# Distribution / Packaging
+# -------------------------------
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# -------------------------------
+# IDE & Editor Files
+# -------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# -------------------------------
+# Test & Coverage Artifacts
+# -------------------------------
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+pytest_cache/
+
+# -------------------------------
+# OS / System Files
+# -------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------------
+# Data & Artifacts
+# -------------------------------
+# Falls du temporäre oder generierte Daten hättest, würdest du sie hier ignorieren.
+# Dein festes HDF5-File bleibt erhalten, deshalb KEIN Ausschluss von /data/
+# Beispiel: falls du später Trainingsausgaben speichern willst:
+# outputs/
+# results/
+# logs/
+data/a_wpS.xyz
+
+# -------------------------------
+# Jupyter Notebooks
+# -------------------------------
+.ipynb_checkpoints/
+
+# -------------------------------
+# Optional: Typing Cache (mypy, pyright)
+# -------------------------------
+.mypy_cache/
+.pytype/
+.pyre/
