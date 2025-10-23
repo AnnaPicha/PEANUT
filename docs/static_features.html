@@ -49,7 +49,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="network_architecture.html">Network Architecture</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="representation_learning.html">Representation Learning</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Static Features</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Static Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#radial-symmetry-functions">Radial symmetry functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spherical-harmonics">Spherical Harmonics</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="learned_features.html">Learned Features</a></li>
 </ul>
 </li>
@@ -89,9 +93,29 @@
   <section id="static-features">
 <h1>Static Features<a class="headerlink" href="#static-features" title="Link to this heading"></a></h1>
 <p>Static features are predefined, engineered inputs that remain constant across training iterations.</p>
-<p>Example formula:</p>
+<p>The model will use two kinds of descriptors for distances (radial symmetry functions) and directional features (Spherical harmonics).</p>
+<section id="radial-symmetry-functions">
+<h2>Radial symmetry functions<a class="headerlink" href="#radial-symmetry-functions" title="Link to this heading"></a></h2>
+<p>We will use <span class="math notranslate nohighlight">\(d = 1, ..., D\)</span> radial symmetry functions of the form:</p>
 <div class="math notranslate nohighlight">
-\[E = mc^2\]</div>
+\[f_d(r_{ij}) = e^{-\eta_D (r_{ij} - R_D)^2} f_c(r_{ij})\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_{ij}\)</span> is the distance between atoms <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(\eta_D\)</span> and <span class="math notranslate nohighlight">\(R_D\)</span> are parameters controlling the width and center of the function, and <span class="math notranslate nohighlight">\(f_c\)</span> is a cutoff function defined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f_c(r) =
+\begin{cases}
+0.5 \left[ \cos\left(\frac{\pi r}{R_c}\right) + 1 \right] &amp; r \leq R_c \\
+0 &amp; r &gt; R_c
+\end{cases}\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(R_c\)</span> being the cutoff radius.</p>
+</section>
+<section id="spherical-harmonics">
+<h2>Spherical Harmonics<a class="headerlink" href="#spherical-harmonics" title="Link to this heading"></a></h2>
+<p>For directional features, we will use spherical harmonics defined as:</p>
+<div class="math notranslate nohighlight">
+\[Y_{lm}(\theta, \phi) = \sqrt{\frac{(2l + 1)}{4\pi} \frac{(l - m)!}{(l + m)!}} P_{lm}(\cos\theta) e^{im\phi}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P_{lm}\)</span> are the associated Legendre polynomials, and <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> are the polar and azimuthal angles, respectively.</p>
+<p>These static features will be combined with learned features to enhance the model’s predictive capabilities.</p>
+</section>
 </section>
 
 

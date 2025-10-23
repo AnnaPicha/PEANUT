@@ -3,8 +3,42 @@ Static Features
 
 Static features are predefined, engineered inputs that remain constant across training iterations.
 
-Example formula:
+The model will use two kinds of descriptors for distances (radial symmetry functions) and directional features (Spherical harmonics).
 
-.. math::
+Radial symmetry functions
+-------------------------
 
-   E = mc^2
+
+
+We will use :math:`d = 1, ..., D` radial symmetry functions of the form:
+
+.. math::   
+
+    f_d(r_{ij}) = e^{-\eta_D (r_{ij} - R_D)^2} f_c(r_{ij})
+
+where :math:`r_{ij}` is the distance between atoms :math:`i` and :math:`j`, :math:`\eta_D` and :math:`R_D` are parameters controlling the width and center of the function, and :math:`f_c` is a cutoff function defined as:
+
+.. math::   
+    
+   f_c(r) = 
+   \begin{cases} 
+   0.5 \left[ \cos\left(\frac{\pi r}{R_c}\right) + 1 \right] & r \leq R_c \\
+   0 & r > R_c 
+   \end{cases}
+
+with :math:`R_c` being the cutoff radius.
+
+Spherical Harmonics 
+-------------------
+
+For directional features, we will use spherical harmonics defined as:
+
+.. math::   
+
+    Y_{lm}(\theta, \phi) = \sqrt{\frac{(2l + 1)}{4\pi} \frac{(l - m)!}{(l + m)!}} P_{lm}(\cos\theta) e^{im\phi}
+    
+where :math:`P_{lm}` are the associated Legendre polynomials, and :math:`\theta` and :math:`\phi` are the polar and azimuthal angles, respectively.
+
+These static features will be combined with learned features to enhance the model's predictive capabilities.
+
+.. The parameters for these functions (like :math:`\eta_s`, :math:`R_s`, and :math:`R_c`) will be defined based on the specific requirements of the dataset and the problem at hand.
