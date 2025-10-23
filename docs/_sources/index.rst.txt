@@ -1,8 +1,10 @@
 PEANUT Documentation
 ====================
 
-This repository documents the deep learning project **PEANUT** (Predictive Energy Analysis using Neural Universal Transformers).  
+
+This repository documents the deep learning project **PEANUT** (Predicting potential Energies with Artificial NeUral neTworks).  
 It provides an overview of the model architecture, datasets, and ongoing development progress.
+
 
 .. toctree::
    :maxdepth: 3
