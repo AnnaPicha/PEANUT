@@ -1,40 +1,13 @@
-.. PEANUT documentation master file, created by
-   sphinx-quickstart on Wed Oct 22 18:55:25 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-PEANUT documentation
+PEANUT Documentation
 ====================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
+This repository documents the deep learning project **PEANUT** (Predictive Energy Analysis using Neural Universal Transformers).  
+It provides an overview of the model architecture, datasets, and ongoing development progress.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
-
-Flowchart
-=========
-
-Flowchart for PEANUT model:
-
-.. image:: _static/peanut_flowchart.png
-   :alt: PEANUT Flowchart
-   :width: 1000px
-
-
-Theory
-======
-
-
-
-Inline-Formular: :math:`E = mc^2`
-
-Block-Formular:
-
-.. math::
-
-   F = ma
+   network_architecture
+   dataset
+   work_progress

@@ -1,0 +1,16 @@
+Network Architecture
+====================
+
+Overview of the PEANUT model architecture and components.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Subsections
+
+   representation_learning
+   energy_prediction
+
+.. image:: _static/peanut_flowchart.png
+   :alt: PEANUT Flowchart
+   :width: 800px
+   :align: center

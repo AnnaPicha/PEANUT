@@ -1,0 +1,11 @@
+Representation Learning
+=======================
+
+Representation learning describes how the model transforms raw input data into meaningful internal representations.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Subsections
+
+   static_features
+   learned_features

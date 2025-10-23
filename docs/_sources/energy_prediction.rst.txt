@@ -1,0 +1,6 @@
+Energy Prediction
+=================
+
+This module predicts energy levels or outcomes based on the learned representations.
+
+The network combines both static and learned features to make robust energy predictions.

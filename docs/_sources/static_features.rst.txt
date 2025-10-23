@@ -1,0 +1,10 @@
+Static Features
+===============
+
+Static features are predefined, engineered inputs that remain constant across training iterations.
+
+Example formula:
+
+.. math::
+
+   E = mc^2

@@ -1,0 +1,5 @@
+Learned Features
+================
+
+Learned features are extracted automatically by the network during training.
+They represent abstract properties discovered from data without human intervention.

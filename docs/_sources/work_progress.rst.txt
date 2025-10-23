@@ -1,0 +1,11 @@
+Work Progress
+=============
+
+This section documents the development timeline and open tasks.
+
+**Current milestones:**
+- [x] Network architecture design
+- [x] Flowchart integration
+- [ ] Training experiments
+- [ ] Evaluation and benchmarking
+- [ ] Documentation cleanup

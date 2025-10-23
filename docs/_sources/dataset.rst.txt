@@ -1,0 +1,10 @@
+Dataset
+=======
+
+The dataset used for training and evaluation.
+
+- **Source:** Internal dataset of annotated physical measurements  
+- **Size:** 100k samples  
+- **Format:** CSV / HDF5  
+
+Future updates will include data preprocessing details and augmentation strategies.
